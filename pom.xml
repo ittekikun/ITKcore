@@ -6,13 +6,23 @@
 
     <groupId>com.ittekikun.plugin</groupId>
     <artifactId>itkcore</artifactId>
-    <version>1.0.0</version>
+    <version>1.00</version>
 
     <dependencies>
-    <dependency>
-        <groupId>org.bukkit</groupId>
-        <artifactId>bukkit</artifactId>
-        <version>1.9.4-R0.1-SNAPSHOT</version>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.9.4-R0.1-SNAPSHOT</version>
+    </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.7.3</version>
         </dependency>
     </dependencies>
 
