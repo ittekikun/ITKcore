@@ -105,52 +105,38 @@ public class BukkitUtility
     private static boolean isUpperVersion(String version, String border)
     {
         int hyphen = version.indexOf("-");
-        if(hyphen > 0)
-        {
+        if ( hyphen > 0 ) {
             version = version.substring(0, hyphen);
         }
 
         String[] versionArray = version.split("\\.");
         int[] versionNumbers = new int[versionArray.length];
-        for(int i=0; i<versionArray.length; i++  )
-        {
-            if(versionArray[i].matches("[0-9]+"))
-            {
+        for ( int i=0; i<versionArray.length; i++ ) {
+            if ( !versionArray[i].matches("[0-9]+") )
                 return false;
-            }
             versionNumbers[i] = Integer.parseInt(versionArray[i]);
         }
 
         String[] borderArray = border.split("\\.");
         int[] borderNumbers = new int[borderArray.length];
-        for(int i=0; i<borderArray.length; i++)
-        {
-            if(!borderArray[i].matches("[0-9]+"))
-            {
+        for ( int i=0; i<borderArray.length; i++ ) {
+            if ( !borderArray[i].matches("[0-9]+") )
                 return false;
-            }
             borderNumbers[i] = Integer.parseInt(borderArray[i]);
         }
 
         int index = 0;
-        while((versionNumbers.length > index) && (borderNumbers.length > index))
-        {
-            if(versionNumbers[index] > borderNumbers[index])
-            {
+        while ( (versionNumbers.length > index) && (borderNumbers.length > index) ) {
+            if ( versionNumbers[index] > borderNumbers[index] ) {
                 return true;
-            }
-            else if(versionNumbers[index] < borderNumbers[index])
-            {
+            } else if ( versionNumbers[index] < borderNumbers[index] ) {
                 return false;
             }
             index++;
         }
-        if(borderNumbers.length == index )
-        {
+        if ( borderNumbers.length == index ) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
