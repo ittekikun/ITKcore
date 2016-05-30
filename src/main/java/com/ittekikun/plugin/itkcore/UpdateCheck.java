@@ -47,9 +47,9 @@ public class UpdateCheck implements Runnable
 
         String name = text.get(0);
 
-        double ver = Double.valueOf(text.get(2));
+        double ver = Double.valueOf(text.get(1));
 
-        String note = text.get(3);
+        String note = text.get(2);
 
         if(ver > nowVer)
         {

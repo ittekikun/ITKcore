@@ -21,7 +21,7 @@ public class MessageUtility
         {
             if (sender instanceof Player)
             {
-                sender.sendMessage(prefix + ChatColor.AQUA + "[" + Level.INFO.getLocalizedName() + "]" + ChatColor.WHITE + message);
+                sender.sendMessage(prefix + ChatColor.AQUA + "[" + Level.INFO.getLocalizedName() + "] " + ChatColor.WHITE + message);
             } else
             {
                 log.info(message);
@@ -31,7 +31,7 @@ public class MessageUtility
         {
             if (sender instanceof Player)
             {
-                sender.sendMessage(prefix + ChatColor.YELLOW + "[" + Level.WARNING.getLocalizedName() + "]" + ChatColor.WHITE + message);
+                sender.sendMessage(prefix + ChatColor.YELLOW + "[" + Level.WARNING.getLocalizedName() + "] " + ChatColor.WHITE + message);
             } else
             {
                 log.warning(message);
@@ -41,7 +41,7 @@ public class MessageUtility
         {
             if (sender instanceof Player)
             {
-                sender.sendMessage(prefix + ChatColor.RED + "[" + Level.SEVERE.getLocalizedName() + "]" + ChatColor.WHITE + message);
+                sender.sendMessage(prefix + ChatColor.RED + "[" + Level.SEVERE.getLocalizedName() + "] " + ChatColor.WHITE + message);
             }
             else
             {

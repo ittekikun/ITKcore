@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="ITKCore">
+    <output-path>K:/test19/plugins</output-path>
+    <root id="archive" name="ITKCore.jar">
+      <element id="module-output" name="ITKCore" />
+      <element id="dir-copy" path="D:/inEEW" />
+    </root>
+  </artifact>
+</component>

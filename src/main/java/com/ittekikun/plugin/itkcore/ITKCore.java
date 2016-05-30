@@ -1,16 +1,20 @@
 package com.ittekikun.plugin.itkcore;
 
 import com.ittekikun.plugin.itkcore.logger.LogFilter;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public class ITKCore  extends JavaPlugin
+public class ITKCore  extends JavaPlugin implements Listener
 {
     public static ITKCore instance;
     public static Logger log;
-    public static final String prefix = "[MineTweet_for_Plugin] ";
+    public static final String prefix = "[ITKCore] ";
     public static PluginManager pluginManager;
     public static boolean forceDisableMode;
 
@@ -33,6 +37,20 @@ public class ITKCore  extends JavaPlugin
 
             return;
         }
+
+        pluginManager.registerEvents(this, this);
+    }
+
+    @EventHandler
+    public void onPlayerJoinCheck(PlayerJoinEvent event)
+    {
+        Player player = event.getPlayer();
+            double NowVer = Double.valueOf(getServer().getPluginManager().getPlugin("ITKCore").getDescription().getVersion());
+
+            String url = "ITKCore";
+
+            Thread updateCheck = new Thread(new UpdateCheck(player, url, NowVer,prefix, log));
+            updateCheck.start();
     }
 
     @Override
